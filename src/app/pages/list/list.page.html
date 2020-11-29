@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>list</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="signOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="reloadGags($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let gag of gags">
+    <ion-card-header>
+      <ion-card-title>{{gag.title}}</ion-card-title>
+      <ion-card-subtitle>
+        {{gag.createdAt?.toMillis() | date: 'short'}}
+      </ion-card-subtitle>
+      <ion-img [src]="gag.image"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- to do -->
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end" >
+    <ion-fab-button color="dark" routerLink="/new-gag">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

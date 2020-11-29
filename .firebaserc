@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firegag-22b1f": {
+      "hosting": {
+        "app": [
+          "firegag-22b1f"
+        ]
+      }
+    }
+  }
+}
